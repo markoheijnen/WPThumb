@@ -35,7 +35,7 @@ define( 'WP_THUMB_URL', plugin_dir_url( __FILE__ ) );
 if ( version_compare( phpversion(), '5.2.4', '<' ) ) {
 
 	require_once( ABSPATH . 'wp-admin/includes/plugin.php' );
-	deactivate_plugins( WP_THUMB_PATH . '/plugin.php' );
+	deactivate_plugins( WP_THUMB_PATH . 'plugin.php' );
 
 	if ( isset( $_GET['action'] ) && ( $_GET['action'] == 'activate' || $_GET['action'] == 'error_scrape' ) )
 		die( __( 'WP Thumb requires PHP version 5.2.4 or greater.', 'wpthumb' ) );
@@ -43,7 +43,7 @@ if ( version_compare( phpversion(), '5.2.4', '<' ) ) {
 }
 
 // Load the watermarking class
-include_once( WP_THUMB_PATH . '/wpthumb.watermark.php' );
+include_once( WP_THUMB_PATH . 'wpthumb.watermark.php' );
 
 /**
  * Base WP_Thumb class
@@ -92,7 +92,7 @@ class WP_Thumb {
 
 		// Load PHPThumb if it isn't already defined
 		if ( ! class_exists( 'PhpThumbFactory' ) )
-			include_once( WP_THUMB_PATH . '/phpthumb/src/ThumbLib.inc.php' );
+			include_once( WP_THUMB_PATH . 'phpthumb/src/ThumbLib.inc.php' );
 
 		if ( $file_path )
 			$this->setFilePath( $file_path );
