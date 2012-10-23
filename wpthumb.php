@@ -743,8 +743,7 @@ function wpthumb( $url, $args = array() ) {
  * @return null
  */
 function wpthumb_post_image( $null, $id, $args ) {
-
-	if ( ( ! strpos( (string) $args, '=' ) ) && ! ( is_array( $args ) && isset( $args[0] ) && $args[0] == $args[1] ) ) {
+	if ( ( ! is_array( $args ) && ! strpos( (string) $args, '=' ) ) && ! ( is_array( $args ) && isset( $args[0] ) && $args[0] == $args[1] ) ) {
 
 		global $_wp_additional_image_sizes;
 
